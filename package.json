@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "up": "npm run build && npm run start",
     "start": "DEBUG=express:* node ./bin/www",
-    "build": "rm -rf dist && babel src -d dist --presets env -s"
+    "build": "./node_modules/.bin/babel src -d dist --presets env -s",
+    "clean": "rm -rf dist",
+    "eslint": "./node_modules/.bin/eslint ./"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
