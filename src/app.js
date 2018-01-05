@@ -1,19 +1,18 @@
-let express = require('express');
-let path = require('path');
-let favicon = require('serve-favicon');
-let logger = require('morgan');
-let cookieParser = require('cookie-parser');
-let bodyParser = require('body-parser');
-let lessMiddleware = require('less-middleware');
+import express from 'express';
+import path from 'path';
+// import favicon from 'serve-favicon';
+import logger from 'morgan';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import lessMiddleware from 'less-middleware';
 
-let index = require('./routes/index');
-
-let users = require('./routes/users');
+import index from './routes/index';
+import users from './routes/users';
 
 let app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(...[__dirname, '../views']));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
@@ -22,8 +21,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(lessMiddleware(path.join(__dirname, '../public')));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(lessMiddleware(path.join(...[__dirname, '../public'])));
+app.use(express.static(path.join(...[__dirname, '../public'])));
 
 app.use('/', index);
 app.use('/users', users);

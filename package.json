@@ -6,6 +6,7 @@
     "start": "DEBUG=express:* node ./bin/www",
     "build": "./node_modules/.bin/babel src -d dist --presets env -s",
     "clean": "rm -rf dist",
+    "rebuild": "rm -rf dist && ./node_modules/.bin/babel src -d dist --presets env -s",
     "eslint": "./node_modules/.bin/eslint ./"
   },
   "dependencies": {
@@ -14,9 +15,14 @@
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "less-middleware": "~2.2.1",
+    "moment": "^2.20.1",
     "morgan": "~1.9.0",
+    "node-statsd": "^0.1.1",
     "pug": "2.0.0-beta11",
-    "serve-favicon": "~2.4.5"
+    "request-promise": "^4.2.2",
+    "serve-favicon": "~2.4.5",
+    "validatorjs": "^3.13.6",
+    "winston": "^2.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

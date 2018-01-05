@@ -1,0 +1,43 @@
+{
+  "apps": [
+    {
+      "name": "CPSITE_Myd_dev",
+      "script": "./bin/www",
+      "error_file": "./logs/pm2/mw_auth_dev.err.log",
+      "out_file": "./logs/pm2/mw_auth_dev.out.log",
+      "instances": 0,
+      "max_memory_restart": "512M",
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "dev",
+        "PORT": "3000"
+      }
+    },
+    {
+      "name": "CPSITE_Myd_test",
+      "script": "./bin/www",
+      "error_file": "./logs/pm2/mw_auth_dev.err.log",
+      "out_file": "./logs/pm2/mw_auth_dev.out.log",
+      "instances": 0,
+      "max_memory_restart": "512M",
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "test",
+        "PORT": "3000"
+      }
+    },
+    {
+      "name": "CPSITE_Myd_aliyun_prod",
+      "script": "./bin/www",
+      "error_file": "./logs/pm2/mw_auth_aliyun_prod.err.log",
+      "out_file": "./logs/pm2/mw_auth_aliyun_prod.out.log",
+      "instances": 0,
+      "max_memory_restart": "512M",
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "aliyun_prod",
+        "PORT": "3000"
+      }
+    }
+  ]
+}
