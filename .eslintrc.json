@@ -14,6 +14,7 @@
   "rules": {
     "no-unused-vars" : 1,
     "new-cap": 1,
+    "require-jsdoc": 1,
     "no-var": 2,
     "no-undef" : 2
   }
